@@ -1,3 +1,27 @@
+# Clasificación de corales con Transfer Learning y Fine Tuning
+
+- [Introducción](#introducción)
+  * [Conjunto de datos RSMAS](#conjunto-de-datos-rsmas)
+- [Preprocesamiento utilizado](#preprocesamiento-utilizado)
+  * [Corrección de la luminosidad de las imágenes](#corrección-de-la-luminosidad-de-las-imágenes)
+  * [Desenfoque Gaussiano](#desenfoque-gaussiano)
+  * [Data augmentation](#data-augmentation)
+- [Modelos utilizados](#modelos-utilizados)
+  * [VGG-16](#vgg-16)
+  * [Resnet-50](#resnet-50)
+  * [Xception](#xception)
+- [Tuning de los hiperparámetros de la red](#tuning-de-los-hiperparámetros-de-la-red)
+  * [Configuración capas del modelo](#configuración-capas-del-modelo)
+  * [Función de coste](#función-de-coste)
+  * [Selección del optimizador](#selección-del-optimizador)
+  * [Callback](#callback)
+  * [Tratamiento del balanceo de clases](#tratamiento-del-balanceo-de-clases)
+- [Resultados](#resultados)
+  * [Pruebas iniciales (Inception, VGG-16)](#pruebas-iniciales)
+  * [VGG-16](#vgg-16-1)
+  * [Resnet-50](#resnet-50-1)
+  * [Xception](#xception-1)
+  * [Resultados de los mejores envíos](#resultados-de-los-mejores-envíos)
 
 # Introducción
 
@@ -12,7 +36,7 @@ Este informe pretende dejar constancia del trabajo realizado por los componentes
 * José Daniel Pascual Triana
 * Francisco Carrillo Pérez
 
-## Conjunto de datos
+## Conjunto de datos RSMAS
 
 Actualmente, existen ocho puntos de referencia abiertos que se utilizan para la clasificación de los corales subacuáticos. En esta competición se ha utilizado el conjunto RSMAS, uno de los conjuntos de datos RGB más recientes y que contienen mayor número de corales. Este conjuntos de datos se componen de imágenes de partes de corales, las cuales capturan de forma principal la textura de las mismas más que la estructura global del coral en cuestión.
 Así, el conjunto de imágenes RSMAS contiene 766 imágenes de tamaño 256×256. Las imágenes fueron recolectadas por buzos de la Rosenstiel School of Marine and Atmospheric Science, de la universidad de Miami. Estas imágenes fueron tomadas con diferentes cámaras en diferentes lugares y han sido clasificadas en 14 clases, cuyas etiquetas corresponden a los nombres de las especies de coral en latín. En la Figura 1 se muestran varias imágenes del conjunto de datos. Para la competición, se ha dividido el conjunto de imágenes RSMAS de la siguiente forma:
@@ -223,7 +247,7 @@ En este problema se observó la existencia de una claro desbalanceo entre clases
 
 A continuación, se explica la estructura concreta de distintos envíos realizados y se valoran los resultados obtenidos por los mismos.
 
-## Pruebas iniciales (Inception, VGG-16)
+## Pruebas iniciales
 
 Las primeras redes presentaron unos resultados muy bajos, en parte por ser simples pruebas para comprobar cómo se comportan los algoritmos de base, pero también por el hecho de que las subidas de predicciones a la plataforma Kaggle no fueron del todo correctas, debido a que aún si bien estas se suben con un formato <ID, Predicción>, el orden de las predicciones influye en la evaluación por parte de Kaggle, cuando intuitivamente se podría pensar que debiera hacer uso del ID de cara a evaluar cada predicción.
 
