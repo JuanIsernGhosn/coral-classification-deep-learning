@@ -31,10 +31,11 @@ La librería de que ha utilizado para desarrollar los modelos que se presentan e
 
 Este informe pretende dejar constancia del trabajo realizado por los componentes del grupo de LaGuaguaTeam, de forma que a lo largo de estas páginas se intentarán detallar aquellas tareas que se han realizado durante las distintas fases de la competición y que han derivado en unos resultados que también se exponen en este documento. Cabe recordar los miembros del equipo de LaGuaguaTeam:
 
-* Juan Ignacio Isern Ghosn
-* José Daniel Déniz Cerpa
-* José Daniel Pascual Triana
-* Francisco Carrillo Pérez
+* **Juan Isern** - *Initial work* - [JuanIsernGhosn](https://github.com/JuanIsernGhosn/)
+* **José Daniel Déniz Cerpa** - *Initial work* - [DaniDeniz](https://github.com/DaniDeniz/)
+* **Francisco Carrillo Pérez** - *Initial work* - [Pacocp](https://github.com/Pacocp/)
+* **José Daniel Pascual Triana**
+
 
 ## Conjunto de datos RSMAS
 
